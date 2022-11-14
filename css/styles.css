@@ -15,7 +15,7 @@ body{
     z-index: 200;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0px 0px 10px black;
+    box-shadow: 0 0 10px black;
     backdrop-filter: blur(2px);
     isolation: isolate;
     background-color: transparent;
@@ -40,7 +40,7 @@ body.header-active #Header{
 #Header a{
     display: grid;
     place-content: center;
-    font-family: 'Roboto Condensed';
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
 #Header img{
@@ -106,8 +106,10 @@ header, article, footer{
     padding: var(--padding-top) max(var(--padding-right),(100% - var(--content-width))/2) var(--padding-bottom) max(var(--padding-left),(100% - var(--content-width))/2);
 }
 
-.quote{
-    margin-left:var(--padding-s);
+.quote {
+    margin-left: calc(var(--padding-s) / 2);
+    padding-left: calc(var(--padding-s) / 2);
+    border-left: 3px solid var(--grey-200);
 }
 
 .quote blockquote{
@@ -341,7 +343,7 @@ footer a:hover,footer a:focus{
         justify-content: center;
         align-items: start;
         padding: var(--padding-s);
-        overflow: hidden-x;
+        overflow: hidden;
         transform: translateX(100%);
         transition:transform var(--standard-transition) ease;
     }
