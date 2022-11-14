@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;400;500;600;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300;1,400&display=swap');
+
+
+:root{
+    --primary-color-200:#b33f00;
+    --primary-color-400: #e65100;
+    --primary-color-600: #ff6a00;
+    --grey-200: #2a2a2a;
+    --grey-400: hsl(0, 0%, 26%);
+    --text-color: #ffffffcc;
+    --arf-color-200: #063f79;
+    --arf-color-400:#095aac;
+    --arf-color-600: #0b6ed2;
+    --sword-color-200:#c94b00;
+    --sword-color-400:#fc5f00;
+    --sword-color-600:#ff7100;
+
+    --primary-font-family:'Roboto Slab';
+    --secondary-font-family:'Roboto Condensed';
+
+    --font-size-xxl: clamp(2.369rem, 0.9732rem + 2.9118vw, 3.157rem);
+    --font-size-xl:clamp(1.777rem, 0.7284rem + 2.1875vw, 2.369rem);
+    --font-size-l:clamp(1.333rem, 0.5465rem + 1.6406vw, 1.777rem);
+	--font-size-m: clamp(1.2rem, 1.0390rem + 0.6133vw, 1.333rem);
+    --font-size-s: clamp(1rem, 0.9131rem + 0.3311vw, 1.125rem);
+
+    --padding-s: clamp(1rem, -2.5427rem + 7.3903vw, 3rem);
+    --padding-m: clamp(2rem, -3.3141rem + 11.0855vw, 5rem);
+    --padding-l: clamp(4rem, 0.1586rem + 8.0134vw, 7rem);
+
+    --scrollbar-thumb-color:var(--primary-color-400);
+    --scrollbar-track-color: var(--grey-400);
+    --selection-color:white;
+    --selection-background:var(--primary-color-400);
+    --focus-ring:var(--primary-color-200);
+    --standard-transition:250ms;
+    
+    --content-width:1600px;
+    --gap:var(--font-size-s);
+}
+
+@media(max-width:767px){
+    :root {
+        --padding-s: clamp(1rem, -0.2104rem + 4.6110vw, 2rem);
+        --padding-m: clamp(1rem, -6.2622rem + 27.6657vw, 7rem);
+        --padding-l: clamp(2.5rem, 0.6844rem + 6.9164vw, 4rem);		
+        
+        --font-size-xxl: clamp(1.44rem, 0.9861rem + 2.2694vw, 2.074rem);
+        --font-size-xl: clamp(1.2rem, 0.8220rem + 1.8899vw, 1.728rem);
+        --font-size-l: clamp(1rem, 0.6850rem + 1.5749vw, 1.44rem);
+        --font-size-m: clamp(1rem, 0.7579rem + 0.9222vw, 1.2rem);
+    }
+}
+
+.primary-heading{
+    font-family:var(--primary-font-family);
+    line-height:1.3;
+    font-weight:500;
+}
+
+.secondary-heading{
+    font-family:var(--secondary-font-family);
+    line-height:1.3;
+    font-weight:100;
+    text-transform: uppercase;
+}
+
+.font-size-xxl{
+    font-size:var(--font-size-xxl);
+}
+
+.font-size-xl{
+    font-size:var(--font-size-xl);
+}
+
+.font-size-l{
+    font-size:var(--font-size-l);
+}
+
+.font-size-m{
+    font-size:var(--font-size-m);
+}
+
+.font-size-s{
+    font-size:var(--font-size-s);
+}
+
+.article-padding{
+    padding-top:var(--padding-l);
+    padding-bottom:var(--padding-l);
+    --padding-left:var(--padding-m);
+    --padding-right:var(--padding-m);
+}
+
+.padding-inline-s{
+    --padding-right: var(--padding-s);
+    --padding-left: var(--padding-s);
+}
+
+
+
+/*Chrome & Safari*/
+::-webkit-scrollbar {
+    width: 1rem;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--scrollbar-track-color);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb-color);
+} 
+
+/*Firefox*/
+* {	
+    scrollbar-color: var(--scrollbar-thumb-color) var(--scrollbar-track-color);	
+}	
+
+/*Chrome & Safari*/
+::selection {
+        background: var(--selection-background);
+        color: var(--selection-color);
+}
+
+/*Firefox*/
+::-moz-selection {
+        background: var(--selection-background);
+        color: var(--selection-color);
+}	
+
+:focus-visible{	
+    outline: var(--focus-ring) solid medium;
+    outline: -webkit-focus-ring-color auto 1px;
+}
+
+a{
+    color:var(--primary-color-400);
+}
+
+a:hover, a:focus{
+    color:var(--primary-color-600);
+}
+
+* , *::before, *::after{
+    transition: background-color var(--standard-transition) ease, color var(--standard-transition) ease , opacity calc(var(--standard-transition) * 3) ease , transform calc(var(--standard-transition) * 3) ease , top var(--standard-transition) ease , right var(--standard-transition) ease, bottom var(--standard-transition) ease , left var(--standard-transition) ease;
+}
+
+.fadeInUp.on-scroll-once{
+    transform: translateY(clamp(20vh , 100%, 50vh));
+    opacity: 0;
+}
+
+.fadeInUp.visible{
+    transform: translateY(0%);
+    opacity: 1;
+}
+
+.fadeInDelay0{
+    transition-delay: 0ms;
+}
+
+.fadeInDelay1{
+    transition-delay: 150ms;
+}
+
+.button{
+    --button-size:1em;
+    --outline-size:2px;
+    position: relative;
+    display: grid;
+    width:fit-content;
+    isolation:isolate;
+    font-family: 'Roboto Condensed';
+    padding:1em 2em;
+    font-weight:700;
+    text-transform: uppercase;
+    clip-path: polygon(
+    0% 0%,
+    0% calc(100% - var(--button-size)),
+    var(--button-size) 100% ,
+    var(--button-size) 100%,
+    100% 100%,
+    100% var(--button-size),
+    calc(100% - var(--button-size)) 0%);  
+}
+
+.button::before{
+    content:'';
+    position: absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    z-index: -1;
+    background-color: var(--primary-color-400);
+    clip-path: polygon(
+    0% 0%,
+    0% calc(100% - var(--button-size)),
+    var(--button-size) 100% ,
+    var(--button-size) calc(100% - var(--outline-size)),
+    var(--outline-size) calc(100% - var(--button-size)),
+    var(--outline-size) var(--outline-size),
+    calc(100% - var(--button-size)) var(--outline-size),    
+    calc(100% - var(--outline-size)) var(--button-size),
+    calc(100% - var(--outline-size)) calc(100% - var(--outline-size)),
+    var(--button-size) calc(100% - var(--outline-size)),
+    var(--button-size) 100%,
+    100% 100%,
+    100% var(--button-size),
+    calc(100% - var(--button-size)) 0%);    
+}
+
+.button::after{
+    content:'';
+    position: absolute;
+    top:100%;
+    right:100%;
+    bottom:0;
+    left:0;
+    z-index: -1;
+    background-color: var(--primary-color-400);
+    clip-path: polygon(
+    0% 0%,
+    0% calc(100% - var(--button-size)),
+    var(--button-size) 100% ,
+    var(--button-size) 100%,
+    100% 100%,
+    100% var(--button-size),
+    calc(100% - var(--button-size)) 0%);
+    opacity: 0.2;
+}
+
+.button:hover::after, .button:focus::after{
+    top:0%;
+    right:0%;
+}
